@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class ConversionController extends Controller
 {
-    // Convert Gregorian to Ethiopian
+    
     public function gregorianToEthiopian(Request $request)
     {
         $date = $request->input('date');
@@ -16,7 +16,7 @@ class ConversionController extends Controller
         return response()->json(['ethiopian_date' => $ethiopianDate]);
     }
 
-    // Convert Ethiopian to Gregorian
+  
     public function ethiopianToGregorian(Request $request)
     {
         $date = $request->input('date');
@@ -25,20 +25,20 @@ class ConversionController extends Controller
         return response()->json(['gregorian_date' => $gregorianDate->format('Y-m-d')]);
     }
 
-    // Convert ETB to USD
+    
     public function etbToUsd(Request $request)
     {
         $amount = $request->input('amount');
-        $rate = 0.02; // Example conversion rate
+        $rate = 0.02; 
         $usdAmount = $amount * $rate;
         return response()->json(['usd_amount' => $usdAmount]);
     }
 
-    // Convert USD to ETB
+   
     public function usdToEtb(Request $request)
     {
         $amount = $request->input('amount');
-        $rate = 50.0; // Example conversion rate
+        $rate = 50.0; 
         $etbAmount = $amount * $rate;
         return response()->json(['etb_amount' => $etbAmount]);
     }
